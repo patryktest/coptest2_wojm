@@ -1,0 +1,51 @@
+#saveLoginCheckBox {
+    float: right;
+}
+#saveLoginCheckBox .ui-checkbox{
+    clear: both;
+    margin: 0;
+    position: relative;
+    right: 37px;
+    top: 8px;
+    z-index: 1;
+}
+#popupMenu li,#popupMenu2 li,#popupMenu3 li {
+    background: none repeat scroll 0 0 #EFF6FB;
+}
+#popupMenu.ui-overlay-shadow,#popupMenu2.ui-overlay-shadow,#popupMenu3.ui-overlay-shadow {
+    box-shadow: none;
+    border: 3px solid #CCC;
+    border-radius: 0;
+}
+#popupMenu ul,#popupMenu2 ul,#popupMenu3 ul {
+    box-shadow: none;
+    min-width: 160px;
+}
+#popupMenu .li-CHAT_STATUS_ONLINE,#popupMenu2 .li-CHAT_STATUS_ONLINE,#popupMenu3 .li-CHAT_STATUS_ONLINE{
+    color: #00CC99;
+}
+#popupMenu .li-CHAT_STATUS_AWAY,#popupMenu2 .li-CHAT_STATUS_AWAY,#popupMenu3 .li-CHAT_STATUS_AWAY{
+    color: #00CCCC;
+}
+#popupMenu .li-CHAT_STATUS_EMERGENCY,#popupMenu2 .li-CHAT_STATUS_EMERGENCY,#popupMenu3 .li-CHAT_STATUS_EMERGENCY{
+    color: #FF6600;
+}
+#popupMenu .li-CHAT_STATUS_OFFLINE,#popupMenu2 .li-CHAT_STATUS_OFFLINE,#popupMenu3 .li-CHAT_STATUS_OFFLINE{
+    color: #CCCCCC;
+}
+#popupMenu .li-CHAT_STATUS_INVISIBLE,#popupMenu2 .li-CHAT_STATUS_INVISIBLE,#popupMenu3 .li-CHAT_STATUS_INVISIBLE {
+    color: #F8CF31;
+}
+
+#popupMenu .li-popup-mnu-link,#popupMenu2 .li-popup-mnu-link,#popupMenu3 .li-popup-mnu-link {
+    padding-left: 50px;
+}
+
+.ui-li-message-text {
+    display: inline-block;
+    font-size: 11pt;
+    line-height: 11pt;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 80%;
+}

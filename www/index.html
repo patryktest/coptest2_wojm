@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Uniquedoc chat</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">       
+        <script src="js/config.js"></script>
+        <script type="text/javascript">
+
+        </script>
+    </head>
+
+    <body id="body">
+
+        <!-----------------------------------------------------------------------------------------------------------------------------login page------->
+        <div data-role="page" id="loginPage" class="show">
+            <div data-role="content">
+                <p class="login_logo"></p>
+                <div data-role="input">
+                    <input type="text" id="loginI" value=""/>
+                </div>
+                <div data-role="input">
+                    <input type="password" id="passwordI" value=""/>
+                </div>
+                <div>
+                    <button onclick="commandLoginMainPage($('#loginI').val(), $('#passwordI').val());" id="loginButton">Login</button>
+                </div>     
+                <div>
+                    <span id="connectionON">Network status...</span>     
+                    <span id="saveLoginCheckBox"><input type="checkbox"/>save login</span>
+                </div>    
+                    
+
+
+            </div>
+        </div>
+        <!-----------------------------------------------------------------------------------------------------------------------------main page------->
+        <div data-role="page" id="mainPage">
+            <div data-role="header">
+                <h1 id="mainPageHeadT">Chat</h1> 
+                <!-- <button onclick="logout();">Logout</button> -->
+                <div data-type="horizontal" data-role="controlgroup" class="ui-btn-right">
+                    <a id="contactLink" onclick="onOpenContactList();"  href="" data-inline="true" data-transition="slide"></a>
+                    <a id="statusLinkMainPage"  href="#popupMenu" data-rel="popup" data-inline="true" data-transition="slidedown" data-icon="CHAT_STATUS_AVAILABLE" class="ui-CHAT_STATUS_AVAILABLE" ></a>
+                </div>
+            </div>
+
+            <div data-role="content" data-theme="d">
+                <div id="chatListElement"></div>
+                <!--<ul data-role="listview" id="chatListT">
+                    <li class="ui-li ui-li-static ui-btn-up-c">test :message</li>
+                </ul>-->
+
+                <div data-role="popup" id="popupMenu"></div>
+            </div>
+
+
+        </div>
+        <!-----------------------------------------------------------------------------------------------------------------------------contact page------->
+        <div data-role="page" id="contactPage" data-theme="d">
+            <div data-role="header" data-theme="d">
+                <h1 id="contactT">Connections</h1>  
+                <!-- <button onclick="logout();">Logout</button> -->
+                <a id="contactback" onclick="onGoToMainPage();"  href=""  data-inline="true" data-transition="slide" ></a>
+                <a id="statusLinkContatct"  href="#popupMenu2" data-rel="popup"  data-inline="true" data-transition="slidedown" class="ui-CHAT_STATUS_AVAILABLE"></a>
+
+            </div>
+
+            <div data-role="content">
+                <ul id="contactList-selectedFriendT" data-role="listview" class="ui-listview">
+
+                </ul>
+                <ul data-role="listview" id="contactPageSmallMenu">
+                    <li data-icon="false" class="btn_openPrivateGroupChat"><a onclick="onOpenPrivateGroupChat();" href=""><span class="smallMenuBtn"></span></a></li>
+                    <li data-icon="false" class="manageGroupMembers">
+                        <div data-type="horizontal" data-role="controlgroup" class="ui-btn-right">
+                            <a onclick="onOkManageGroupMembers();" href=""><span class="manageGroupMembers_ok"></span></a>
+                            <a onclick="onCancelManageGroupMembers();" href=""><span class="manageGroupMembers_cancel"></span></a>
+                        </div>
+                    </li>
+                </ul>
+
+                <ul data-role="listview" id="contactListT" data-filter="true" data-theme="d" data-filter-placeholder="search for connections"></ul>
+
+                <div data-role="popup" id="popupMenu2"></div>
+            </div>
+        </div>
+        <!-----------------------------------------------------------------------------------------------------------------------------chat page------->
+        <div data-role="page" id="chatPageTemplate" data-theme="d">
+            <div data-role="header" data-position="fixed" data-theme="d">
+                <h1 id="chatPageTitle">Text chat</h1>  
+
+                <a id="chatBack" onclick="onGoToMainPage();"></a>
+                <div data-type="horizontal" data-role="controlgroup" class="ui-btn-right">
+                    <a id="infoPrivateChat" onclick="onOpenContactList();"  href="" data-inline="true" data-transition="slide"></a>
+                    <a id="statusLinkChat"     href="#popupMenu3" data-rel="popup" data-inline="true" data-transition="slidedown" data-icon="CHAT_STATUS_AVAILABLE" class="ui-CHAT_STATUS_AVAILABLE"></a>
+                </div>
+            </div>
+
+            <div data-role="content">
+                <div id="chatHistoryElementPlace"></div>
+                <!--<ul data-role="listview" id="chatHistory">                        
+                </ul>-->
+                <div data-role="popup" id="popupMenu3"></div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-theme="d">
+                <div class="block-input-send"><input type="text" id="inputPrivateMessage" placeholder="send message"/></div>
+                <div class="block-button-send"><button onclick="commandSendPrivateMessage($('#inputPrivateMessage').val());"></button></div>
+            </div>
+        </div>
+
+        <!-----------------------------------------------------------------------------------------------------------------------------groupchat page------->
+        <div data-role="page" id="groupChatPageTemplate" data-theme="d">
+            <div data-role="header" data-position="fixed" data-theme="d">
+                <h1 id="groupChatPageT"></h1>  
+                <a id="groupChatBack" onclick="onGoToMainPage();" href=""  data-inline="true" data-transition="slide"></a>
+                <div data-type="horizontal" data-role="controlgroup" class="ui-btn-right">
+                    <a id="infoGroupChat" onclick="onOpenGroupMenu(getActiveGroupChat());"  href="" data-inline="true" data-transition="slide"></a>
+                    <a id="statusLinkGroupChat"     href="#popupMenu3" data-rel="popup" data-inline="true" data-transition="slidedown" data-icon="CHAT_STATUS_AVAILABLE" class="ui-CHAT_STATUS_AVAILABLE"></a>
+                </div>
+            </div>
+
+            <div data-role="content">
+                <div id="groupHistoryElementPlace"></div>
+
+                <!--<ul data-role="listview" id="groupChatHistory">                        
+                </ul>-->
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-theme="d">
+                <div class="block-input-send"><input type="text" id="inputGroupMessage" placeholder="send message"/></div>
+                <div class="block-button-send"><button onclick="sendGroupMessage(getActiveGroupChat(), $('#inputGroupMessage').val());"></button></div>
+            </div>
+        </div>
+
+        <!-----------------------------------------------------------------------------------------------------------------------------groupchat menu------->
+        <div data-role="page" id="groupMenuPageTemplate" data-theme="d">
+            <div data-role="header" data-position="fixed" data-theme="d">
+                <h1 id="groupMenuPageT"></h1>  
+                <a id="groupMenuBack" href=""  data-inline="true" data-transition="slide" data-rel="back"></a>
+                <a id="statusLinkContatct"  href="#popupMenuGMPT" data-rel="popup"  data-inline="true" data-transition="slidedown" class="ui-CHAT_STATUS_AVAILABLE"></a>
+
+            </div>
+
+            <div data-role="content">
+                <ul data-role="listview" id="groupMenuConnections">                        
+                </ul>
+                <div data-role="popup" id="popupMenuGMPT"></div>
+
+                <div data-role="popup" id="popupGroupMenu" data-overlay-theme="a" data-theme="d" data-dismissible="false" style="max-width:400px;">
+                    <div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+                        <p>This action cannot be undone.</p>
+                        <a class="left_btn" href="#" data-role="button" data-inline="true" data-rel="back" data-theme="c">Cancel</a>
+                        <a class="right_btn" onclick="test();" href="#" data-role="button" data-inline="true" data-theme="b">Delete</a>
+                    </div>
+                </div>
+            </div>
+
+            <div data-role="footer" data-position="fixed" data-theme="d">
+                <a id="groupChatMenuBtn_manage" onclick="onGroupPopupMenu('manage');"  href=""  data-inline="true" data-transition="slide" data-corners="false">manage connections</a>
+                <a id="groupChatMenuBtn_rename" onclick="onGroupPopupMenu('rename');"  href=""  data-inline="true" data-transition="slide" data-corners="false">rename group</a>
+                <a id="groupChatMenuBtn_leave" onclick="onGroupPopupMenu('leave');"  href=""  data-inline="true" data-transition="slide" data-corners="false">leave group</a>
+                <a id="groupChatMenuBtn_close" onclick="onGroupPopupMenu('close');"  href=""  data-inline="true" data-transition="slide" data-corners="false">close group</a>
+            </div>
+        </div>
+        <!--------------------------------------------------------------------------------------------------------------------------------- page------->
+        <div data-role="page" id="chatPage">
+            <div data-role="header">
+                <h1>Chat window</h1>  
+                <button onclick="logout();">Logout</button>
+            </div>
+
+            <div data-role="content">
+                <ul data-role="listview" id="messageArray" data-theme="e">
+                    <li class="ui-li ui-li-static ui-btn-up-c">test :messafe</li>
+                </ul>
+                <p>
+                    <input type="text" id="input"/>
+
+                    <button onclick="openPrivateChat(8);">Open chat</button>
+                    <button onclick="closePrivateChat(8);">Close chat</button>
+
+                    <button onclick="openGroupChat('test G1');">Open group</button>
+                    <button onclick="closeGroupChat(7551);">Close group 7551</button>
+                    <button onclick="addUserToGroup(8, 4194);">Add user 8 to group 4194</button>
+
+                    <button onclick="leaveConversation(3751);">Leave conver 3751</button>
+
+                    <button onclick="sendGroupMessage(4194, 'test message from web to group');">send mess to 4194</button>
+
+
+                </p>
+
+            </div>
+        </div>
+
+    </body>
+</html>

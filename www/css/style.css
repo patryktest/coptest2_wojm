@@ -1,0 +1,322 @@
+[data-role="page"].show {
+    display: block;
+}
+[data-role="page"] {
+    display: none;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    color: #999999;
+}
+.login_logo{
+    background: url("../img/logo_front.png") no-repeat scroll 0 0 transparent;
+    height: 225px;
+    left: 50%;
+    margin: 0 auto;
+    width: 250px;
+    background-size: 225px auto;
+}
+#loginPage input{
+    width: 100%;
+}
+#loginPage button{
+    width: 100%;
+}
+#saveLoginCheckBox{
+    float: right;
+}
+#saveLoginCheckBox input {
+    width: 0;
+}
+[data-role="content"] {
+    padding: 15px;
+}
+[data-role="input"] {
+    padding: 5px;
+}
+[data-role="footer"] {
+    bottom: 0;
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+input {
+    border: medium none;
+    box-shadow: 0 1px 3px 1px #999999;
+    color: #999999;
+    padding: 10px 0;
+}
+button {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: medium none;
+    box-shadow: 0 1px 3px 1px #999999;
+    color: #999999;
+    font-weight: bold;
+    padding: 10px 0;
+    cursor: pointer;
+}
+#contactLink {
+    background: url("../img/icons.svg") no-repeat scroll -94px -20px transparent;
+    height: 20px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    width: 19px;
+    background-size: 240px auto;
+}
+[data-role="header"] {
+    background: linear-gradient(#FFFFFF, #FCFCFC) repeat scroll 0 0 #FFFFFF;
+    border-bottom: 1px solid #F2F2F2;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+[data-role="header"] h1 {
+    color: #CCCCCC;
+    font-size: 20px;
+    margin: 0;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+}
+[data-role=popup] {
+    display: none;
+}
+ul {
+    list-style: none outside none;
+    margin: -15px;
+    padding: 0;
+}
+li {
+    border-bottom: 1px solid #F2F2F2;
+    display: block;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+/*-----------------------------------------------------------------------------------*/
+#chatBack {
+    background-position: -45px -21px;
+    width: 19px;
+}
+#chatBack, #contactback, #groupChatBack, #groupMenuBack {
+    background: url("../img/icons.svg") no-repeat scroll -115px 0 / 240px auto rgba(0, 0, 0, 0);
+    border: medium none;
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    height: 18px;
+    left: 10px;
+    text-decoration: none;
+    top: 33%;
+    width: 18px;
+    position: absolute;
+    cursor: pointer;
+}
+#infoPrivateChat, #infoGroupChat {
+    background: url("../img/icons.svg") no-repeat scroll -26px -20px / 240px auto rgba(0, 0, 0, 0);
+    height: 20px;
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    width: 19px;
+}
+/*-----------------------------------------------------------------------------------*/
+#statusLinkMainPage, #statusLinkChat, #statusLinkGroupChat{
+    border-radius: 16px 16px 16px 16px;
+    display: block;
+    height: 18px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 18px;       
+}
+.ui-li-icon {
+    float: left;
+    left: 0;
+    max-height: 30px;
+    max-width: 30px;
+    position: absolute;
+    top: 5px;
+}
+#chatListT li{
+    height: 40px;
+}
+#chatListT li a {
+    padding: 0 0 0 35px;
+    display: block;
+    cursor: pointer;
+}
+/*---------------------------------------------------------------------------*/
+.ui-CHAT_STATUS_ONLINE{
+    background: none repeat scroll 0 0 #00CC99;
+    color: #00CC99;
+}
+.ui-CHAT_STATUS_AVAILABLE{
+    background: none repeat scroll 0 0 #00CC99;
+    color: #00CC99;
+}
+.ui-CHAT_STATUS_AWAY{
+    background: none repeat scroll 0 0 #00CCCC;
+    color: #00CCCC;
+}
+.ui-CHAT_STATUS_EMERGENCY{
+    background: none repeat scroll 0 0 #FF6600;
+    color: #FF6600;
+}
+.ui-CHAT_STATUS_OFFLINE{
+    background: none repeat scroll 0 0 #CCCCCC;
+    color: #CCCCCC;
+}
+.ui-CHAT_STATUS_INVISIBLE {
+    background: none repeat scroll 0 0 #F8CF31;
+    color: #F8CF31;
+}
+.ui-icon-CHAT_STATUS_AVAILABLE{
+    background: url("../img/icons_online.svg") repeat scroll 0 0 transparent;
+}
+.ui-icon-CHAT_STATUS_ONLINE{
+    background: url("../img/icons_online.svg") repeat scroll 0 0 transparent;
+}
+.ui-icon-CHAT_STATUS_AWAY {
+    background: url("../img/icons_away.svg") repeat scroll 0 0 transparent;
+}
+.ui-icon-CHAT_STATUS_EMERGENCY {
+    background: url("../img/icons_emergency.svg") repeat scroll 0 0 transparent;
+}
+.ui-icon-CHAT_STATUS_BUSY {
+    background: url("../img/icons_.svg") repeat scroll 0 0 transparent;
+}
+.ui-icon-CHAT_STATUS_INVISIBLE {
+    background: url("../img/icons_invisible.svg") repeat scroll 0 0 transparent;
+}
+.ui-icon-CHAT_STATUS_OFFLINE {
+    background: url("../img/icons.svg") repeat scroll 0 0 transparent;
+}
+
+/*--------------------------------------------------------------------------------------*/
+
+.device-mobile {
+    background-position: 0 0;
+    background-size: 190px auto;
+    height: 16px;
+    width: 11px;
+}
+.device-blackberry {
+    background-position: 0 0;
+    background-size: 190px auto;
+    height: 16px;
+    width: 11px;
+}
+.device-tablet {
+    background-position: -134px -16px;
+    background-size: 190px auto;
+    height: 16px;
+    width: 16px;
+}
+.device-pc {
+    background-position: -132px 0px;
+    background-size: 190px auto;
+    height: 15px;
+    width: 16px;
+}
+
+.user-delet-icon {
+    background: url("../img/icons.svg") repeat scroll -83px 0px transparent;
+    height: 11px;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    width: 9px;
+    background-size: 150px auto;
+}
+.user-status-icon {
+    font-family: SSPika;
+    position: absolute;
+    right: 10px;
+    top: 35%;
+}
+/*-------------------------------------------------------------------------------*/
+
+.message_status_SERVER_PRIVATE_MESSAGE_READ{
+    background: url("../img/icons.svg") no-repeat scroll 0 -13px transparent;
+    display: inline-block;
+    height: 13px;
+    width: 17px;
+    background-size: 160px auto;
+}
+.message_status_SERVER_PRIVATE_MESSAGE_DELIVERED{
+    background: url("../img/icons.svg") no-repeat scroll -10px 0px transparent;
+    display: inline-block;
+    height: 13px;
+    width: 14px;
+    background-size: 160px auto;
+}
+.message_status_SERVER_PRIVATE_MESSAGE_SENT{
+    background: url("../img/icons.svg") no-repeat scroll -101px -13px transparent;
+    display: inline-block;
+    height: 13px;
+    width: 12px;
+    background-size: 160px auto;
+}
+/*-----------------------------------------------------------------------------------*/
+.chat-list-friend-item, .chat-list-group-item {
+    margin: -3px 0 0;
+}
+/*------------------------------------------------------------------------------------*/
+.block-input-send {
+    float: left;
+    margin-left: 8px;
+}
+.block-button-send {
+    float: right;
+    margin: 5px 22px 0 0;
+}
+.block-button-send button {
+    background: url("../img/icons.svg") repeat scroll -118px -20px / 250px auto rgba(0, 0, 0, 0);
+    border: medium none;
+    border-radius: 0 0 0 0;
+    box-shadow: none;
+    height: 21px;
+    margin: 0;
+    padding: 0;
+    width: 20px;
+}
+/*--------------------------------------------------------------------------------------*/
+.ui-li-right {
+    float: right;
+    margin: 0;
+}
+.ui-li-left .ui-li-profil-icon, .ui-li-right .ui-li-profil-icon {
+    height: 30px;
+    width: 30px;
+}
+.ui-li-message-left, .ui-li-message-right {
+    margin: 0 25px 0 10px;
+    overflow: visible;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+.ui-li-message-time {
+    color: #CCCCCC;
+    margin: 9px 0 0;
+    padding: 0 0 5px;
+    text-align: center;
+    width: 100%;
+}
+#chatHistory li.dark, #groupChatHistory li.dark {
+    background: none repeat scroll 0 0 #EFF9FF;
+}
+#chatHistory li, #groupChatHistory li {
+    margin: 0;
+    min-height: 25px;
+    padding: 0;
+}
